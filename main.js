@@ -1,3 +1,21 @@
+
+var twoSum = function (nums, target) {
+  let newTarg = [];
+  for (let i = 0; i < nums.length; i++) {
+    nums.map((num, index) => {
+      if (num + nums[i] === target) {
+        if (i === index) {
+          return
+        } else {
+          newTarg.push(i, index)
+        }
+      }
+    })
+  }
+  let result = [... new Set(newTarg)];
+  return result;
+};
+
 let answer = document.getElementById('root');
 let h1 = document.createElement('h1')
 
@@ -16,3 +34,4 @@ var arrayStringsAreEqual = function (word1, word2) {
 h1.innerText = arrayStringsAreEqual(arr1, arr2)
 
 answer.append(h1);
+
